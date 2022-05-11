@@ -1,0 +1,6 @@
+{
+  "parent": "weaponsplus:block/tin_block",
+  "textures": {
+    "texture": "weaponsplus:block/tin_block"
+  }
+}
