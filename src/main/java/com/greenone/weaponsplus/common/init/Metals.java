@@ -20,6 +20,8 @@ public class Metals {
     public static final Metal NETHERITE = register(new Metal("netherite", MetalType.VANILLA, Tiers.NETHERITE, ArmorMaterials.NETHERITE));
 
     public static final Metal TIN = register(new Metal("tin", MetalType.PURE, WPTiers.TIN, WPArmorMaterials.TIN));
+    public static final Metal LEAD = register(new Metal("lead", MetalType.PURE, WPTiers.LEAD, WPArmorMaterials.LEAD));
+    public static final Metal SILVER = register(new Metal("silver", MetalType.PURE, WPTiers.SILVER, WPArmorMaterials.SILVER));
 
     public static void init(){  }
 

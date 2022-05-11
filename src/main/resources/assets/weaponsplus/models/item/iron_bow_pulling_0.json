@@ -1,0 +1,6 @@
+{
+  "parent": "weaponsplus:item/iron_bow",
+  "textures": {
+    "layer0": "weaponsplus:item/iron_bow_pulling_0"
+  }
+}

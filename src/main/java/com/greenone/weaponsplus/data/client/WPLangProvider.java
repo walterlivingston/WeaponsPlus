@@ -17,6 +17,11 @@ public class WPLangProvider extends LanguageProvider {
     }
 
     @Override
+    public String getName() {
+        return "Weapons+ - Languages";
+    }
+
+    @Override
     protected void addTranslations() {
         if(this.locale.equals("en_us")){
             for(Metal m : Metals.METALS.values()){
@@ -31,16 +36,16 @@ public class WPLangProvider extends LanguageProvider {
                     addItem(() -> WPItems.axes.get(m).get(), getFormattedName(m.tagName()+"_axe",m));
                     addItem(() -> WPItems.pickaxes.get(m).get(), getFormattedName(m.tagName()+"_pickaxe",m));
                     addItem(() -> WPItems.shovels.get(m).get(), getFormattedName(m.tagName()+"_shovel",m));
-//                    addItem(() -> WPItems.hoes.get(m).get(), getFormattedName(m.tagName()+"_hoe",m));
-//                    addItem(() -> WPItems.bows.get(m).get(), getFormattedName(m.tagName()+"_bow",m));
+                    addItem(() -> WPItems.hoes.get(m).get(), getFormattedName(m.tagName()+"_hoe",m));
 //                    addItem(() -> WPItems.crossbows.get(m).get(), getFormattedName(m.tagName()+"_crossbow",m));
 //                    addItem(() -> WPItems.spears.get(m).get(), getFormattedName(m.tagName()+"_spear",m));
 //                    addItem(() -> WPItems.shields.get(m).get(), getFormattedName(m.tagName()+"_shield",m));
-//                    addItem(() -> WPItems.helmets.get(m).get(), getFormattedName(m.tagName()+"_helmet",m));
-//                    addItem(() -> WPItems.chestplates.get(m).get(), getFormattedName(m.tagName()+"_chestplate",m));
-//                    addItem(() -> WPItems.leggings.get(m).get(), getFormattedName(m.tagName()+"_leggings",m));
-//                    addItem(() -> WPItems.boots.get(m).get(), getFormattedName(m.tagName()+"_boots",m));
+                    addItem(() -> WPItems.helmets.get(m).get(), getFormattedName(m.tagName()+"_helmet",m));
+                    addItem(() -> WPItems.chestplates.get(m).get(), getFormattedName(m.tagName()+"_chestplate",m));
+                    addItem(() -> WPItems.leggings.get(m).get(), getFormattedName(m.tagName()+"_leggings",m));
+                    addItem(() -> WPItems.boots.get(m).get(), getFormattedName(m.tagName()+"_boots",m));
                 }
+                addItem(() -> WPItems.bows.get(m).get(), getFormattedName(m.tagName()+"_bow",m));
             }
         }
     }

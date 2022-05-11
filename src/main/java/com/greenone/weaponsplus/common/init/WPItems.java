@@ -2,10 +2,9 @@ package com.greenone.weaponsplus.common.init;
 
 import com.greenone.weaponsplus.common.Metal;
 import com.greenone.weaponsplus.WeaponsPlus;
-import com.greenone.weaponsplus.common.item.tools.AxePlus;
-import com.greenone.weaponsplus.common.item.tools.PickaxePlus;
-import com.greenone.weaponsplus.common.item.tools.ShovelPlus;
-import com.greenone.weaponsplus.common.item.tools.SwordPlus;
+import com.greenone.weaponsplus.common.item.ArmorItemPlus;
+import com.greenone.weaponsplus.common.item.tools.*;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -28,6 +27,7 @@ public class WPItems {
     public static Map<Metal, RegistryObject<Item>> pickaxes = new HashMap<>();
     public static Map<Metal, RegistryObject<Item>> shovels = new HashMap<>();
     public static Map<Metal, RegistryObject<Item>> hoes = new HashMap<>();
+    public static Map<Metal, RegistryObject<Item>> bows = new HashMap<>();
     public static Map<Metal, RegistryObject<Item>> helmets = new HashMap<>();
     public static Map<Metal, RegistryObject<Item>> chestplates = new HashMap<>();
     public static Map<Metal, RegistryObject<Item>> leggings = new HashMap<>();
@@ -51,8 +51,13 @@ public class WPItems {
                 axes.put(m, ITEMS.register(m.tagName() + "_axe", () -> new AxePlus(m)));
                 pickaxes.put(m, ITEMS.register(m.tagName() + "_pickaxe", () -> new PickaxePlus(m)));
                 shovels.put(m, ITEMS.register(m.tagName() + "_shovel", () -> new ShovelPlus(m)));
-//                hoes.put(m, registerItem(m.tagName() + "_hoe", new WPHoe(m)));
+                hoes.put(m, ITEMS.register(m.tagName() + "_hoe", () -> new HoePlus(m)));
+                helmets.put(m, ITEMS.register(m.tagName()+"_helmet", () -> new ArmorItemPlus(m, EquipmentSlot.HEAD)));
+                chestplates.put(m, ITEMS.register(m.tagName()+"_chestplate", () -> new ArmorItemPlus(m, EquipmentSlot.CHEST)));
+                leggings.put(m, ITEMS.register(m.tagName()+"_leggings", () -> new ArmorItemPlus(m, EquipmentSlot.LEGS)));
+                boots.put(m, ITEMS.register(m.tagName()+"_boots", () -> new ArmorItemPlus(m, EquipmentSlot.FEET)));
             }
+            bows.put(m, ITEMS.register(m.tagName() + "_bow", () -> new BowPlus(m)));
         }
         ITEMS.register(eventBus);
     }

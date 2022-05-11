@@ -1,0 +1,6 @@
+{
+  "parent": "weaponsplus:item/lead_bow",
+  "textures": {
+    "layer0": "weaponsplus:item/lead_bow_pulling_0"
+  }
+}

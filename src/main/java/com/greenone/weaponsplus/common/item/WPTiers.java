@@ -11,7 +11,10 @@ import java.util.function.Supplier;
 
 public enum WPTiers implements Tier {
     COPPER(2, 200, 7.0F, 1.5F, 14, () -> Ingredient.of(Items.COPPER_INGOT)),
-    TIN(2, 200, 7.0F, 1.5F, 14, () -> Ingredient.of(WPItems.ingots.get(Metals.TIN).get()))
+    TIN(2, 200, 7.0F, 1.5F, 14, () -> Ingredient.of(WPItems.ingots.get(Metals.TIN).get())),
+    LEAD(2, 500, 2.0F, 2.8F, 8, () -> Ingredient.of(WPItems.ingots.get(Metals.LEAD).get())),
+    SILVER(2, 300, 12.0F, 1.5F, 25, () -> Ingredient.of(WPItems.ingots.get(Metals.SILVER).get()))
+
 //    DIAMOND(3, 1561, 8.0F, 3.0F, 10, () -> {
 //        return Ingredient.of(Items.DIAMOND);
 //    }),

@@ -24,7 +24,7 @@ public class WPLootTableProvider extends LootTableProvider {
 
     @Override
     public String getName() {
-        return "LostHeroes - Loot Tables";
+        return "Weapons+ - Loot Tables";
     }
 
     @Override

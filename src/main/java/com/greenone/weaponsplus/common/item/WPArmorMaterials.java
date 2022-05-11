@@ -1,5 +1,6 @@
 package com.greenone.weaponsplus.common.item;
 
+import com.greenone.weaponsplus.WeaponsPlus;
 import com.greenone.weaponsplus.common.init.Metals;
 import com.greenone.weaponsplus.common.init.WPItems;
 import net.minecraft.sounds.SoundEvent;
@@ -17,7 +18,11 @@ public enum WPArmorMaterials implements ArmorMaterial {
     COPPER("copper", 13, new int[]{1, 4, 5, 2}, 11, SoundEvents.ARMOR_EQUIP_IRON, 0.0F, 0.0F,
             () -> Ingredient.of(Items.COPPER_INGOT)),
     TIN("tin", 13, new int[]{1, 4, 5, 2}, 11, SoundEvents.ARMOR_EQUIP_IRON, 0.0F, 0.0F,
-            () -> Ingredient.of(WPItems.ingots.get(Metals.TIN).get()))
+            () -> Ingredient.of(WPItems.ingots.get(Metals.TIN).get())),
+    LEAD("lead", 18, new int[]{3, 6, 6, 2}, 9, SoundEvents.ARMOR_EQUIP_IRON, 1.0F, 0.1F,
+            () -> Ingredient.of(WPItems.ingots.get(Metals.LEAD).get())),
+    SILVER("silver", 16, new int[]{2, 5, 6, 2}, 25, SoundEvents.ARMOR_EQUIP_IRON, 0.2F, 0.0F,
+            () -> Ingredient.of(WPItems.ingots.get(Metals.SILVER).get()))
 //    GOLD("gold", 7, new int[]{1, 3, 5, 2}, 25, SoundEvents.ARMOR_EQUIP_GOLD, 0.0F, 0.0F, () -> {
 //        return Ingredient.of(Items.GOLD_INGOT);
 //    }),
@@ -79,7 +84,7 @@ public enum WPArmorMaterials implements ArmorMaterial {
 
     @Override
     public @NotNull String getName() {
-        return this.name;
+        return WeaponsPlus.MOD_ID + ":" + this.name;
     }
 
     @Override

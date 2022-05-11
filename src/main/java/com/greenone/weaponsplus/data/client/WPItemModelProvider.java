@@ -20,7 +20,7 @@ public class WPItemModelProvider extends ItemModelProvider {
     @Nonnull
     @Override
     public String getName() {
-        return super.getName();
+        return "Weapons+ - Item Models";
     }
 
     @Override
@@ -48,7 +48,6 @@ public class WPItemModelProvider extends ItemModelProvider {
                 builder(itemGenerated, m.tagName() + "_boots");
             }
         }
-
     }
 
     private ItemModelBuilder builder(ModelFile itemGenerated, String name) {

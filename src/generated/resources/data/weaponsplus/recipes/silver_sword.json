@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X",
+    "X",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "X": {
+      "item": "weaponsplus:silver_ingot"
+    }
+  },
+  "result": {
+    "item": "weaponsplus:silver_sword"
+  }
+}
