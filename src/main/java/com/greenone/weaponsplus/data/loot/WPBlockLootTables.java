@@ -1,9 +1,10 @@
 package com.greenone.weaponsplus.data.loot;
 
 import com.google.common.collect.ImmutableSet;
-import com.greenone.weaponsplus.Metal;
+import com.greenone.weaponsplus.common.Metal;
 import com.greenone.weaponsplus.WeaponsPlus;
-import com.greenone.weaponsplus.init.Metals;
+import com.greenone.weaponsplus.common.init.Metals;
+import com.greenone.weaponsplus.common.init.WPBlocks;
 import net.minecraft.advancements.critereon.EnchantmentPredicate;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.advancements.critereon.MinMaxBounds;
@@ -39,13 +40,9 @@ public class WPBlockLootTables extends BlockLoot {
     @Override
     protected void addTables() {
         for(Metal m : Metals.METALS.values()){
-            if(m.isVanilla()){
-
-            }else {
-                //dropSelf(LHBlocks.storageBlocks.get(m));
-                if (m.hasOre()) {
-                    //dropSelf(LHBlocks.ores.get(m));
-                }
+            if(!m.isVanilla()){
+                if (m.hasOre()) dropSelf(WPBlocks.ores.get(m).get());
+                dropSelf(WPBlocks.storage_blocks.get(m).get());
             }
         }
     }

@@ -1,11 +1,8 @@
 package com.greenone.weaponsplus;
 
 import com.greenone.weaponsplus.data.DataGenerators;
-import com.greenone.weaponsplus.init.Registration;
-import com.greenone.weaponsplus.init.WPBlocks;
-import com.greenone.weaponsplus.init.WPItems;
+import com.greenone.weaponsplus.common.init.Registration;
 import com.mojang.logging.LogUtils;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;

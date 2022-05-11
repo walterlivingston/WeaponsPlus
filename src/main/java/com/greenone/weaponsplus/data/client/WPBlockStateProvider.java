@@ -1,8 +1,9 @@
 package com.greenone.weaponsplus.data.client;
 
-import com.greenone.weaponsplus.Metal;
+import com.greenone.weaponsplus.common.Metal;
 import com.greenone.weaponsplus.WeaponsPlus;
-import com.greenone.weaponsplus.init.Metals;
+import com.greenone.weaponsplus.common.init.Metals;
+import com.greenone.weaponsplus.common.init.WPBlocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -25,13 +26,9 @@ public class WPBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         for(Metal m : Metals.METALS.values()){
-            if(m.isVanilla()){
-
-            }else {
-//                simpleBlock(LHBlocks.storageBlocks.get(m));
-//                if (m.hasOre()) {
-//                    simpleBlock(LHBlocks.ores.get(m));
-//                }
+            if(!m.isVanilla()) {
+                if (m.hasOre()) simpleBlock(WPBlocks.ores.get(m).get());
+                simpleBlock(WPBlocks.storage_blocks.get(m).get());
             }
         }
     }

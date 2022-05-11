@@ -1,6 +1,6 @@
 {
-  "parent": "weaponsplus:block/tin_ore",
+  "parent": "minecraft:block/cube_all",
   "textures": {
-    "texture": "weaponsplus:block/tin_ore"
+    "all": "weaponsplus:block/tin_ore"
   }
 }

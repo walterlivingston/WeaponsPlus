@@ -1,8 +1,8 @@
 package com.greenone.weaponsplus.data.client;
 
-import com.greenone.weaponsplus.Metal;
+import com.greenone.weaponsplus.common.Metal;
 import com.greenone.weaponsplus.WeaponsPlus;
-import com.greenone.weaponsplus.init.Metals;
+import com.greenone.weaponsplus.common.init.Metals;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
@@ -29,11 +29,9 @@ public class WPItemModelProvider extends ItemModelProvider {
         ModelFile handheld = getExistingFile(new ResourceLocation("item/handheld"));
 
         for(Metal m : Metals.METALS.values()) {
-            if (!m.isVanilla()){
+            if (!m.isVanilla()) {
+                if (m.hasOre()) withExistingParent(m.tagName() + "_ore", modLoc("block/" + m.tagName() + "_ore"));
                 withExistingParent(m.tagName() + "_block", modLoc("block/" + m.tagName() + "_block"));
-                if (m.hasOre())
-                    withExistingParent(m.tagName() + "_ore", modLoc("block/" + m.tagName() + "_ore"));
-
                 builder(itemGenerated, m.tagName() + "_ingot");
             }
             if(!m.isVanilla() || m == Metals.COPPER) {

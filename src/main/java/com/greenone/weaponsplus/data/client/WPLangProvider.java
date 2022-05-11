@@ -1,9 +1,10 @@
 package com.greenone.weaponsplus.data.client;
 
-import com.greenone.weaponsplus.Metal;
+import com.greenone.weaponsplus.common.Metal;
 import com.greenone.weaponsplus.WeaponsPlus;
-import com.greenone.weaponsplus.init.Metals;
-import com.greenone.weaponsplus.init.WPItems;
+import com.greenone.weaponsplus.common.init.Metals;
+import com.greenone.weaponsplus.common.init.WPBlocks;
+import com.greenone.weaponsplus.common.init.WPItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
 
@@ -20,16 +21,16 @@ public class WPLangProvider extends LanguageProvider {
         if(this.locale.equals("en_us")){
             for(Metal m : Metals.METALS.values()){
                 if(!m.isVanilla()) {
-//                    if(m != Metals.COPPER) addBlock(() -> LHBlocks.storageBlocks.get(m), getFormattedName(m.tagName()+"_block",m));
-//                    if(m.hasOre()) { addBlock(() -> LHBlocks.ores.get(m), getFormattedName(m.tagName()+"_ore",m)); }
+                    if(m.hasOre()) { addBlock(() -> WPBlocks.ores.get(m).get(), getFormattedName(m.tagName()+"_ore",m)); }
+                    addBlock(() -> WPBlocks.storage_blocks.get(m).get(), getFormattedName(m.tagName()+"_block",m));
                     addItem(() -> WPItems.ingots.get(m).get(), getFormattedName(m.tagName() + "_ingot", m));
                 }
                 if(!m.isVanilla() || m == Metals.COPPER){
                     addItem(() -> WPItems.nuggets.get(m).get(), getFormattedName(m.tagName()+"_nugget",m));
                     addItem(() -> WPItems.swords.get(m).get(), getFormattedName(m.tagName()+"_sword",m));
-//                    addItem(() -> WPItems.axes.get(m).get(), getFormattedName(m.tagName()+"_axe",m));
-//                    addItem(() -> WPItems.pickaxes.get(m).get(), getFormattedName(m.tagName()+"_pickaxe",m));
-//                    addItem(() -> WPItems.shovels.get(m).get(), getFormattedName(m.tagName()+"_shovel",m));
+                    addItem(() -> WPItems.axes.get(m).get(), getFormattedName(m.tagName()+"_axe",m));
+                    addItem(() -> WPItems.pickaxes.get(m).get(), getFormattedName(m.tagName()+"_pickaxe",m));
+                    addItem(() -> WPItems.shovels.get(m).get(), getFormattedName(m.tagName()+"_shovel",m));
 //                    addItem(() -> WPItems.hoes.get(m).get(), getFormattedName(m.tagName()+"_hoe",m));
 //                    addItem(() -> WPItems.bows.get(m).get(), getFormattedName(m.tagName()+"_bow",m));
 //                    addItem(() -> WPItems.crossbows.get(m).get(), getFormattedName(m.tagName()+"_crossbow",m));
