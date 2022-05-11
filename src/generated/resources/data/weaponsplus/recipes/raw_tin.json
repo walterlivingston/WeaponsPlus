@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "weaponsplus:raw_tin"
+  },
+  "result": "weaponsplus:tin_ingot",
+  "experience": 0.7,
+  "cookingtime": 200
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "weaponsplus:silver_chestplate"
+    ]
+  },
+  "criteria": {
+    "has_silver": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "weaponsplus:silver_ingot"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "weaponsplus:silver_chestplate"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_silver",
+      "has_the_recipe"
+    ]
+  ]
+}

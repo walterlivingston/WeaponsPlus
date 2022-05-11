@@ -1,0 +1,47 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "weaponsplus:lead_bow"
+    ]
+  },
+  "criteria": {
+    "has_string": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:string"
+            ]
+          }
+        ]
+      }
+    },
+    "has_lead_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "weaponsplus:lead_ingot"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "weaponsplus:lead_bow"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_string",
+      "has_lead_ingot",
+      "has_the_recipe"
+    ]
+  ]
+}
