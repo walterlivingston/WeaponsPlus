@@ -75,7 +75,7 @@ public class Metal implements IMetal{
 
     @Override
     public boolean hasOre() {
-        return !type.isVanilla();
+        return this.getType() == MetalType.PURE;
     }
 
     @Override

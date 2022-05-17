@@ -28,6 +28,7 @@ public class WPItems {
     public static Map<Metal, RegistryObject<Item>> shovels = new HashMap<>();
     public static Map<Metal, RegistryObject<Item>> hoes = new HashMap<>();
     public static Map<Metal, RegistryObject<Item>> bows = new HashMap<>();
+    public static Map<Metal, RegistryObject<Item>> shields = new HashMap<>();
     public static Map<Metal, RegistryObject<Item>> helmets = new HashMap<>();
     public static Map<Metal, RegistryObject<Item>> chestplates = new HashMap<>();
     public static Map<Metal, RegistryObject<Item>> leggings = new HashMap<>();
@@ -38,10 +39,10 @@ public class WPItems {
         for(Metal m : Metals.METALS.values()){
             if(!m.isVanilla() || m.equals(Metals.COPPER)){
                 if(!m.equals(Metals.COPPER)) {
-                    raw.put(m, ITEMS.register("raw_" + m.tagName(), () -> new Item((new Item.Properties()).tab(CreativeModeTab.TAB_MATERIALS))));
+                    if(m.getType() == MetalType.PURE) raw.put(m, ITEMS.register("raw_" + m.tagName(), () -> new Item((new Item.Properties()).tab(CreativeModeTab.TAB_MATERIALS))));
                     ingots.put(m, ITEMS.register(m.tagName() + "_ingot", () -> new Item((new Item.Properties()).tab(CreativeModeTab.TAB_MATERIALS))));
                 }else{
-                    raw.put(m, RegistryObject.create(Items.RAW_COPPER.getRegistryName(), ForgeRegistries.ITEMS));
+                    if(m.getType() == MetalType.PURE) raw.put(m, RegistryObject.create(Items.RAW_COPPER.getRegistryName(), ForgeRegistries.ITEMS));
                     ingots.put(m, RegistryObject.create(Items.COPPER_INGOT.getRegistryName(), ForgeRegistries.ITEMS));
                 }
                 nuggets.put(m, ITEMS.register(m.tagName() + "_nugget", () -> new Item((new Item.Properties()).tab(CreativeModeTab.TAB_MATERIALS))));
@@ -58,6 +59,8 @@ public class WPItems {
                 boots.put(m, ITEMS.register(m.tagName()+"_boots", () -> new ArmorItemPlus(m, EquipmentSlot.FEET)));
             }
             bows.put(m, ITEMS.register(m.tagName() + "_bow", () -> new BowPlus(m)));
+            if(m != Metals.IRON) shields.put(m, ITEMS.register(m.tagName()+"_shield", () -> new ShieldPlus(m)));
+            else shields.put(m, RegistryObject.create(Items.SHIELD.getRegistryName(), ForgeRegistries.ITEMS));
         }
         ITEMS.register(eventBus);
     }

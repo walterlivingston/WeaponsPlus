@@ -39,13 +39,13 @@ public class WPLangProvider extends LanguageProvider {
                     addItem(() -> WPItems.hoes.get(m).get(), getFormattedName(m.tagName()+"_hoe",m));
 //                    addItem(() -> WPItems.crossbows.get(m).get(), getFormattedName(m.tagName()+"_crossbow",m));
 //                    addItem(() -> WPItems.spears.get(m).get(), getFormattedName(m.tagName()+"_spear",m));
-//                    addItem(() -> WPItems.shields.get(m).get(), getFormattedName(m.tagName()+"_shield",m));
                     addItem(() -> WPItems.helmets.get(m).get(), getFormattedName(m.tagName()+"_helmet",m));
                     addItem(() -> WPItems.chestplates.get(m).get(), getFormattedName(m.tagName()+"_chestplate",m));
                     addItem(() -> WPItems.leggings.get(m).get(), getFormattedName(m.tagName()+"_leggings",m));
                     addItem(() -> WPItems.boots.get(m).get(), getFormattedName(m.tagName()+"_boots",m));
                 }
                 addItem(() -> WPItems.bows.get(m).get(), getFormattedName(m.tagName()+"_bow",m));
+                addItem(() -> WPItems.shields.get(m).get(), getFormattedName(m.tagName()+"_shield",m));
             }
         }
     }

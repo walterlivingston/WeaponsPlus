@@ -2,6 +2,7 @@ package com.greenone.weaponsplus.data.client;
 
 import com.greenone.weaponsplus.common.Metal;
 import com.greenone.weaponsplus.WeaponsPlus;
+import com.greenone.weaponsplus.common.init.MetalType;
 import com.greenone.weaponsplus.common.init.Metals;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.client.model.generators.BlockModelProvider;
@@ -23,6 +24,7 @@ public class WPBlockModelProvider extends BlockModelProvider {
             if(m.isVanilla()){
 
             }else {
+                if(m.getType() == MetalType.PURE) singleTexture("raw_" + m.tagName() + "_block", modLoc("block/" + "raw_" + m.tagName() + "_block"), modLoc("block/" + "raw_" + m.tagName() + "_block"));
                 singleTexture(m.tagName() + "_block", modLoc("block/" + m.tagName() + "_block"), modLoc("block/" + m.tagName() + "_block"));
                 if (m.hasOre()) singleTexture(m.tagName() + "_ore", modLoc("block/" + m.tagName() + "_ore"), modLoc("block/" + m.tagName() + "_ore"));
             }

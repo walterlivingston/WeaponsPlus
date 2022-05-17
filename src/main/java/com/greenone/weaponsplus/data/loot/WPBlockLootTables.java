@@ -42,6 +42,7 @@ public class WPBlockLootTables extends BlockLoot {
         for(Metal m : Metals.METALS.values()){
             if(!m.isVanilla()){
                 if (m.hasOre()) dropSelf(WPBlocks.ores.get(m).get());
+                dropSelf(WPBlocks.raw_blocks.get(m).get());
                 dropSelf(WPBlocks.storage_blocks.get(m).get());
             }
         }

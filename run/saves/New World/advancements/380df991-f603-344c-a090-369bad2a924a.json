@@ -71,6 +71,18 @@
     },
     "done": true
   },
+  "weaponsplus:recipes/misc/copper_nugget": {
+    "criteria": {
+      "has_copper_ingot": "2022-05-17 15:24:52 -0500"
+    },
+    "done": true
+  },
+  "weaponsplus:recipes/combat/copper_bow": {
+    "criteria": {
+      "has_copper_ingot": "2022-05-17 15:24:52 -0500"
+    },
+    "done": true
+  },
   "minecraft:recipes/building_blocks/brown_wool": {
     "criteria": {
       "has_white_wool": "2022-05-11 14:06:32 -0500"
@@ -161,9 +173,21 @@
     },
     "done": true
   },
+  "weaponsplus:recipes/combat/copper_helmet": {
+    "criteria": {
+      "has_copper": "2022-05-17 15:24:52 -0500"
+    },
+    "done": true
+  },
   "minecraft:adventure/root": {
     "criteria": {
       "killed_something": "2022-05-11 13:51:18 -0500"
+    },
+    "done": true
+  },
+  "weaponsplus:recipes/combat/copper_leggings": {
+    "criteria": {
+      "has_copper": "2022-05-17 15:24:52 -0500"
     },
     "done": true
   },
@@ -188,6 +212,12 @@
   "minecraft:recipes/redstone/dispenser": {
     "criteria": {
       "has_bow": "2022-05-11 13:52:11 -0500"
+    },
+    "done": true
+  },
+  "weaponsplus:recipes/combat/copper_chestplate": {
+    "criteria": {
+      "has_copper": "2022-05-17 15:24:52 -0500"
     },
     "done": true
   },
@@ -219,6 +249,12 @@
   "minecraft:recipes/building_blocks/gray_wool": {
     "criteria": {
       "has_white_wool": "2022-05-11 14:06:32 -0500"
+    },
+    "done": true
+  },
+  "weaponsplus:recipes/combat/copper_boots": {
+    "criteria": {
+      "has_copper": "2022-05-17 15:24:52 -0500"
     },
     "done": true
   },
@@ -261,6 +297,12 @@
   "weaponsplus:recipes/tools/copper_shovel": {
     "criteria": {
       "has_copper_ingot": "2022-05-11 11:16:41 -0500"
+    },
+    "done": true
+  },
+  "weaponsplus:recipes/tools/copper_hoe": {
+    "criteria": {
+      "has_copper_ingot": "2022-05-17 15:24:52 -0500"
     },
     "done": true
   },

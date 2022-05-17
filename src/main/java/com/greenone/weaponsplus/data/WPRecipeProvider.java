@@ -27,8 +27,7 @@ public class WPRecipeProvider extends RecipeProvider {
     protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
         for(Metal m : Metals.METALS.values()){
             if(!m.isVanilla() || m == Metals.COPPER){
-                if(m.hasOre()) {}
-                    SimpleCookingRecipeBuilder.smelting(Ingredient.of(WPItems.raw.get(m).get().asItem()), WPItems.ingots.get(m).get(), 0.7F, 200).unlockedBy("has_raw_"+m.tagName(), has(WPItems.raw.get(m).get().asItem())).save(consumer, new ResourceLocation(WeaponsPlus.MOD_ID, "raw_" + m.tagName()));
+                if(m.hasOre()) SimpleCookingRecipeBuilder.smelting(Ingredient.of(WPItems.raw.get(m).get()), WPItems.ingots.get(m).get(), 0.7F, 200).unlockedBy("has_raw_"+m.tagName(), has(WPItems.raw.get(m).get().asItem())).save(consumer, new ResourceLocation(WeaponsPlus.MOD_ID, "raw_" + m.tagName()));
                 if(m != Metals.COPPER) ShapedRecipeBuilder.shaped(WPBlocks.storage_blocks.get(m).get()).define('#', WPItems.ingots.get(m).get()).pattern("###").pattern("###").pattern("###").unlockedBy("has_" + m.tagName()+"_ingot", has(WPItems.ingots.get(m).get())).save(consumer, new ResourceLocation(WeaponsPlus.MOD_ID, m.tagName() + "_block"));
                 ShapedRecipeBuilder.shaped(WPItems.ingots.get(m).get()).define('#', WPItems.nuggets.get(m).get()).pattern("###").pattern("###").pattern("###").group("iron_ingot").unlockedBy("has_" + m.tagName() + "_nugget", has(WPItems.nuggets.get(m).get())).save(consumer, new ResourceLocation(WeaponsPlus.MOD_ID, m.tagName() + "_ingot_from_nuggets"));
                 ShapelessRecipeBuilder.shapeless(WPItems.nuggets.get(m).get(), 9).requires(WPItems.ingots.get(m).get()).unlockedBy("has_" + m.tagName() + "_ingot", has(WPItems.ingots.get(m).get())).save(consumer, new ResourceLocation(WeaponsPlus.MOD_ID, m.tagName() + "_nugget"));

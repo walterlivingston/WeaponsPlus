@@ -28,6 +28,7 @@ public class WPBlockStateProvider extends BlockStateProvider {
         for(Metal m : Metals.METALS.values()){
             if(!m.isVanilla()) {
                 if (m.hasOre()) simpleBlock(WPBlocks.ores.get(m).get());
+                simpleBlock(WPBlocks.raw_blocks.get(m).get());
                 simpleBlock(WPBlocks.storage_blocks.get(m).get());
             }
         }

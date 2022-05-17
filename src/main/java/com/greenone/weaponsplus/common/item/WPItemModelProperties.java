@@ -19,5 +19,8 @@ public class WPItemModelProperties {
             });
             ItemProperties.register(bow.get(), new ResourceLocation(WeaponsPlus.MOD_ID, "pulling"), (p_239428_0_, p_239428_1_, p_239428_2_, p_174623_) -> p_239428_2_ != null && p_239428_2_.isUsingItem() && p_239428_2_.getUseItem() == p_239428_0_ ? 1.0F : 0.0F);
         }
+        for(RegistryObject<Item> shield : WPItems.shields.values()){
+            ItemProperties.register(shield.get(), new ResourceLocation(WeaponsPlus.MOD_ID,"blocking"), (p_239421_0_, p_239421_1_, p_239421_2_, p_174623_) -> p_239421_2_ != null && p_239421_2_.isUsingItem() && p_239421_2_.getUseItem() == p_239421_0_ ? 1.0F : 0.0F);
+        }
     }
 }

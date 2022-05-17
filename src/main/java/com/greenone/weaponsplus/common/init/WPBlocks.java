@@ -22,12 +22,14 @@ public class WPBlocks {
     public static DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, WeaponsPlus.MOD_ID);
 
     public static Map<Metal, RegistryObject<Block>> ores = new HashMap<>();
+    public static Map<Metal, RegistryObject<Block>> raw_blocks = new HashMap<>();
     public static Map<Metal, RegistryObject<Block>> storage_blocks = new HashMap<>();
 
     public static void init(IEventBus eventBus){
         for(Metal m : Metals.METALS.values()){
             if(!m.isVanilla()){
                 if(m.hasOre()) ores.put(m, BLOCKS.register(m.tagName()+"_ore", () -> registerBlock(m.tagName()+"_ore",new OreBlock(BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)))));
+                if(m.getType() == MetalType.PURE) raw_blocks.put(m, BLOCKS.register("raw_" + m.tagName()+"_block", () -> registerBlock("raw_" + m.tagName()+"_block", new Block(BlockBehaviour.Properties.of(m.getMaterial(), m.getColor()).requiresCorrectToolForDrops().strength(5.0F, 6.0F).sound(SoundType.METAL)))));
                 storage_blocks.put(m, BLOCKS.register(m.tagName()+"_block", () -> registerBlock(m.tagName()+"_block", new Block(BlockBehaviour.Properties.of(m.getMaterial(), m.getColor()).requiresCorrectToolForDrops().strength(5.0F, 6.0F).sound(SoundType.METAL)))));
             }
         }
